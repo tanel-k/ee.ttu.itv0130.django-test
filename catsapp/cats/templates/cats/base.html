@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Cats</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    </head>
+    <body>
+
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'cats:index' %}">Cats</a>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        {% block nav %}
+                        {% endblock nav %}
+                    </ul>
+                  </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+              </nav>
+            {% block main %}
+            {% endblock main %}
+        </div>
+    </body>
+</html>

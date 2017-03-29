@@ -1,0 +1,38 @@
+{% extends "cats/base.html" %}
+
+{% block nav %}
+  <li><a href="{% url 'cats:index' %}">Cats</a></li>
+  <li class="active"><a href="{% url 'cats:new' %}">New cat</a></li>
+{% endblock nav %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <h3>New cat</h3>
+            <form action="{% url 'cats:new' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group {% if form.errors.name %}has-error{% endif %}">
+                    <label for="name">Name</label>
+                    <input class="form-control"
+                           id="name"
+                           name="name"
+                           type="text"
+                           value="{{ form.name }}"/>
+                    <span class="help-block">{{ form.errors.name }}</span>
+                </div>
+                <div class="form-group {% if form.errors.year_of_birth %}has-error{% endif %}">
+                    <label for="year_of_birth">Year of Birth</label>
+                    <input class="form-control"
+                           id="year_of_birth"
+                           name="year_of_birth"
+                           type="text"
+                           value="{{ form.year_of_birth }}">
+                    <span class="help-block">{{ form.errors.year_of_birth }}</span>
+                </div>
+                <div class="btn-group">
+                    <input class="btn btn-submit" type="submit" value="Create">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock main %}
