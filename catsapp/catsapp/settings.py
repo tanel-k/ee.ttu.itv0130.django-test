@@ -25,7 +25,9 @@ SECRET_KEY = '8om76w1w(0g3-0!$v!kt0t)mx469k4)w2+*7+7ihz$r-@k=pp4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'sleepy-waters-25426.herokuapp.com'
+]
 
 
 # Application definition
